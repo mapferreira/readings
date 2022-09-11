@@ -13,12 +13,10 @@ public class GreetingResourceTest {
     public void testHelloEndpoint() {
         Hello hello = new Hello("Hello from RESTEasy Reactive");
 
-        given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body("size()", is(1))
-                ;
+        given().when().get("/hello")
+                .then()
+                .statusCode(200)
+                .body("size()", is(1));
     }
 
 }
