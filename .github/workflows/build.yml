@@ -48,7 +48,7 @@ jobs:
 
     - name: Run API and Postman's tests
       run: |
-        ./mvnw quarkus &
+        ./mvnw quarkus:dev &
         sleep 10
         cd tests/postman/ && ./node_modules/newman/bin/newman.js run hello.postman_collection.json -e hello.postman_environment.json
         kill -9 `lsof -i:8080 -t`
