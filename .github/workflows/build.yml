@@ -33,3 +33,9 @@ jobs:
 
     - name: Install Newman dependency
       run: npm install --prefix tests/postman/
+
+    - name: Run API and Postman's tests
+      run: |
+        ./mvnw quarkus:dev
+        sleep 20
+        cd tests/postman/ && ./node_modules/newman/bin/newman.js run hello.postman_collection.json
