@@ -1,0 +1,52 @@
+openapi: '3.0.0'
+info:
+  version: '0.0.1'
+  title: 'hello world'
+  description: Say hello and many other things
+
+paths:
+  /hello:
+    get:
+      summary: Say hello
+      responses:
+        '200':
+          description: I'm just here to say hello!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hello'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Hello:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          description: The message to return
+          type: string
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          description: A unique code to identify the error
+          type: string
+        message:
+          description: A human readable error message
+          type: string
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+security:
+  - ApiKey: []
