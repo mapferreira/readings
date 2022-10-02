@@ -22,9 +22,14 @@
 							"    pm.response.to.be.header(\"Content-Type\",\"application/json;charset=UTF-8\")\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response time is less than 200ms\", function(){\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});"
+							"pm.test(\"Response time is less than 500ms\", function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function(){\r",
+							"    pm.expect(pm.response.text()).to.not.eql('');\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -132,8 +137,8 @@
 							"    pm.response.to.be.header(\"Content-Type\",\"application/json;charset=UTF-8\")\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response time is less than 500ms\", function(){\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"pm.test(\"Response body is empty\", function(){\r",
+							"    pm.expect(pm.response.text()).to.eql('{}');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -165,7 +170,7 @@
 			},
 			"response": [
 				{
-					"name": "I'm just here to say hello!",
+					"name": "Ping",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
@@ -195,7 +200,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\r\n   \"message\": \"amet nisi labore do\"\r\n}"
+					"body": "{}"
 				},
 				{
 					"name": "Unexpected error",
