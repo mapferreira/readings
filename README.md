@@ -1,3 +1,6 @@
+![build](https://github.com/mapferreira/hello/actions/workflows/build.yml/badge.svg)
+
+
 # hello Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
