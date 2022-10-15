@@ -1,14 +1,14 @@
 {
 	"info": {
 		"_postman_id": "79ab00ea-8009-4aab-9c62-c42ddfef0c88",
-		"name": "Hello",
-		"description": "I'm just here to say hello!",
+		"name": "readings",
+		"description": "I'm just here to say readings!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4395630"
 	},
 	"item": [
 		{
-			"name": "Say hello",
+			"name": "List readings",
 			"event": [
 				{
 					"listen": "test",
@@ -25,10 +25,6 @@
 							"pm.test(\"Response time is less than 500ms\", function(){\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
 							"});\r",
-							"\r",
-							"pm.test(\"Response body is not empty\", function(){\r",
-							"    pm.expect(pm.response.text()).to.not.eql('');\r",
-							"});\r",
 							""
 						],
 						"type": "text/javascript"
@@ -44,18 +40,18 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/hello",
+					"raw": "{{baseUrl}}/readings",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"hello"
+						"readings"
 					]
 				}
 			},
 			"response": [
 				{
-					"name": "I'm just here to say hello!",
+					"name": "I'm just here to say readings!",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
@@ -66,12 +62,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/hello",
+							"raw": "{{baseUrl}}/readings",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"hello"
+								"readings"
 							]
 						}
 					},
@@ -99,12 +95,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/hello",
+							"raw": "{{baseUrl}}/readings",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"hello"
+								"readings"
 							]
 						}
 					},
@@ -181,12 +177,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/hello",
+							"raw": "{{baseUrl}}/readings",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"hello"
+								"readings"
 							]
 						}
 					},
@@ -214,12 +210,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/hello",
+							"raw": "{{baseUrl}}/readings",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"hello"
+								"readings"
 							]
 						}
 					},

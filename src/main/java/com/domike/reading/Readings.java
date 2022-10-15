@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Path("/readings")
 public class Readings {
 
-    private List<Reading> readings = new ArrayList<>();
+    protected List<Reading> readings = new ArrayList<>();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
