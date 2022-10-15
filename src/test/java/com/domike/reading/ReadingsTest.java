@@ -1,4 +1,4 @@
-package com.domike.hello;
+package com.domike.reading;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -7,13 +7,13 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-public class GreetingResourceTest {
+public class ReadingsTest {
 
     @Test
     public void testHelloEndpoint() {
-        Hello hello = new Hello("Hello from RESTEasy Reactive");
+        Reading reading = new Reading();
 
-        given().when().get("/hello")
+        given().when().get("/readings")
                 .then()
                 .statusCode(200)
                 .body("size()", is(1));
