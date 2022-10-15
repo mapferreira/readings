@@ -13,4 +13,9 @@ public class Reading {
 
     }
 
+    public Reading(Long reading, LocalDate date, ReadingType type) {
+        this.reading = reading;
+        this.date = date;
+        this.type = type;
+    }
 }

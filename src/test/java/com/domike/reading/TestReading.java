@@ -9,15 +9,14 @@ import java.time.LocalDate;
 @Priority(1)
 @Alternative
 @ApplicationScoped
-public class TestReading extends Readings{
+public class TestReading extends Readings {
 
     @PostConstruct
     public void init() {
-        Reading reading = new Reading();
-        reading.type = ReadingType.ELECTRICITY;
-        reading.date = LocalDate.now();
-        reading.reading = 1000L;
-        readings.add(reading);
+        readings.add(new Reading(1000L, LocalDate.now(), ReadingType.ELECTRICITY));
+        readings.add(new Reading(1000L, LocalDate.now(), ReadingType.GAS));
+        readings.add(new Reading(1000L, LocalDate.now(), ReadingType.WATER));
+        readings.add(new Reading(1000L, LocalDate.now(), null));
     }
 
 }

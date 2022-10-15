@@ -17,24 +17,32 @@ import static org.hamcrest.CoreMatchers.is;
 public class ReadingsTest {
 
     @Test
-    public void testHelloEndpoint() {
+    void whenGetReadingsWithNoFilter_thenGetAllAvailableReadings() {
         given().when().get("/readings")
+                .then()
+                .statusCode(200)
+                .body("size()", is(4));
+    }
+
+    @Test
+    void whenGetReadingsOfTypeGas_thenGetOnlyGasReadings() {
+        given().when().queryParam("type", "GAS").get("/readings")
                 .then()
                 .statusCode(200)
                 .body("size()", is(1));
     }
 
     @Test
-    public void testGetReadings_Gas() {
-        given().when().queryParam("type", "GAS").get("/readings")
+    void whenGetReadingsOfTypeElectricity_thenGetOnlyElectricityReadings() {
+        given().when().queryParam("type", "ELECTRICITY").get("/readings")
                 .then()
                 .statusCode(200)
-                .body("size()", is(0));
+                .body("size()", is(1));
     }
 
     @Test
-    public void testGetReadings_Electricity() {
-        given().when().queryParam("type", "ELECTRICITY").get("/readings")
+    void whenGetReadingsOfTypeWater_thenGetOnlyWaterReadings() {
+        given().when().queryParam("type", "WATER").get("/readings")
                 .then()
                 .statusCode(200)
                 .body("size()", is(1));
