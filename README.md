@@ -1,5 +1,5 @@
 ![build](https://github.com/mapferreira/hello/actions/workflows/build.yml/badge.svg)
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mapferreira_readings&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=mapferreira_readings)
 
 # Readings Project
 
